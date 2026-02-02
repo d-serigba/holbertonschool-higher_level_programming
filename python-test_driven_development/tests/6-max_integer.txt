@@ -1,0 +1,17 @@
+>>> max_integer = __import__('6-max_integer').max_integer
+
+>>> max_integer([1, 2, 3, 4])
+4
+
+>>> max_integer([1])
+1
+
+>>> max_integer([-1, -2, -3])
+-1
+
+>>> max_integer([])
+None
+
+>>> max_integer()
+Traceback (most recent call last):
+TypeError
