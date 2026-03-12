@@ -18,6 +18,6 @@ class State(Base):
 
     # Colonne ID : clé primaire, auto-générée, entier unique
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
-    
+
     # Colonne Name : chaîne de 128 caractères max, ne peut pas être nulle
     name = Column(String(128), nullable=False)
