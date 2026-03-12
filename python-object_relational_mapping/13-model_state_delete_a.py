@@ -17,7 +17,9 @@ if __name__ == "__main__":
     session = Session()
 
     # 1. On cherche tous les états qui contiennent 'a'
-    states_to_delete = session.query(State).filter(State.name.contains('a')).all()
+    states_to_delete = session.query(State).filter(
+        State.name.contains('a')
+    ).all()
 
     # 2. On les supprime un par un de la session
     for state in states_to_delete:
