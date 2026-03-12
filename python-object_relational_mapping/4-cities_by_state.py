@@ -9,10 +9,10 @@ import sys
 
 def list_cities():
     """
-    Connects to the database and retrieves cities with their 
+    Connects to the database and retrieves cities with their
     corresponding state names using a JOIN.
     """
-    # Connexion sécurisée
+    # Connexion au serveur
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -23,14 +23,11 @@ def list_cities():
 
     cursor = db.cursor()
 
-    # La jointure : on lie cities.state_id à states.id
-    query = """
-    SELECT cities.id, cities.name, states.name 
-    FROM cities 
-    INNER JOIN states ON cities.state_id = states.id 
-    ORDER BY cities.id ASC
-    """
-    
+    # Requête SQL propre sans espaces en fin de ligne
+    query = ("SELECT cities.id, cities.name, states.name "
+             "FROM cities INNER JOIN states ON cities.state_id = states.id "
+             "ORDER BY cities.id ASC")
+
     cursor.execute(query)
 
     rows = cursor.fetchall()
