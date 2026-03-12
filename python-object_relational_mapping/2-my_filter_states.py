@@ -30,10 +30,10 @@ def filter_by_user_input():
     cursor = db.cursor()
 
     # Création de la requête en utilisant .format()
-    # BINARY est utilisé pour s'assurer que la casse est respectée
+    # Utilisation d'une seule ligne ou parenthèses pour éviter le \ mal vu
     query = "SELECT * FROM states WHERE name LIKE BINARY '{}' \
-             ORDER BY id ASC".format(state_name_searched)
-    
+ORDER BY id ASC".format(state_name_searched)
+
     cursor.execute(query)
 
     # Récupération et affichage des résultats
