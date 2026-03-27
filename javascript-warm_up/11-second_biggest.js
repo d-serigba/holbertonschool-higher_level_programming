@@ -10,7 +10,6 @@ if (args.length <= 1) {
   // 1. On convertit tout en nombres
   // 2. On trie par ordre décroissant (b - a)
   const list = args.map(Number).sort((a, b) => b - a);
-  
   // On affiche le deuxième élément (indice 1)
   console.log(list[1]);
 }
