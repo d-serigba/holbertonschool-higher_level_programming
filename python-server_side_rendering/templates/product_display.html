@@ -1,22 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Product Display</title>
-    <style>
-        table { width: 50%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .error { color: red; font-weight: bold; }
-    </style>
+    <title>Products List</title>
 </head>
 <body>
     <h1>Product List</h1>
 
     {% if error %}
-        <p class="error">{{ error }}</p>
+        <p>{{ error }}</p>
     {% else %}
-        <table>
+        <table border="1">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -29,7 +23,7 @@
                 <tr>
                     <td>{{ product.name }}</td>
                     <td>{{ product.category }}</td>
-                    <td>${{ product.price }}</td>
+                    <td>{{ product.price }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
